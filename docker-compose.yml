@@ -1,0 +1,35 @@
+services:
+  auctionfrontend:
+    build:
+      context: ./auctionfrontend
+    ports:
+      - "3000:80"  
+    depends_on:
+      - auctionbackend
+
+  auctionbackend:
+    build:
+      context: ./auctionbackend
+    ports:
+      - "8080:8080"  
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/auction
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: auction
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    ports:
+      - "3307:3306" 
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:

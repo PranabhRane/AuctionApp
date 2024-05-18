@@ -1,0 +1,54 @@
+.card-form {
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  margin-top: 80px;
+  margin-left: 200px;
+  width: 60%;
+  margin-bottom: 20px;
+  background-color: lightblue;
+}
+
+input:read-only{
+  background-color: var(--bs-secondary-bg);
+}
+
+.container{
+  margin-top:60px ;
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: system-ui;
+}
+
+nav {
+  position: fixed;
+  top:0;
+  width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	background: black;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	display: inline;
+	margin-right: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: #eee;
+}
